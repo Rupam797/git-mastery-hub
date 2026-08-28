@@ -31,47 +31,53 @@ export default function App() {
   const currentLesson = allLessons.find(l => l.id === activeLessonId) || allLessons[0];
 
   return (
-    <div className="app-container">
-      <Header 
-        activeTab={activeTab} 
-        setActiveTab={setActiveTab} 
-        theme={theme}
-        toggleTheme={toggleTheme}
-      />
+    <div className="page-wrapper">
+      {/* 2. Sticky Header Container (840px max-width) */}
+      <div className="sticky-header-container">
+        <Header 
+          activeTab={activeTab} 
+          setActiveTab={setActiveTab} 
+          theme={theme}
+          toggleTheme={toggleTheme}
+        />
+      </div>
 
-      {activeTab === 'lessons' && (
-        <main className="main-layout">
-          <Sidebar 
-            activeLessonId={activeLessonId} 
-            onSelectLesson={(id) => setActiveLessonId(id)} 
-          />
-          <LessonViewer lesson={currentLesson} />
-        </main>
-      )}
+      {/* 3. Main Content Container (920px max-width) */}
+      <div className="main-content-container">
+        {activeTab === 'lessons' && (
+          <main className="main-layout">
+            <Sidebar 
+              activeLessonId={activeLessonId} 
+              onSelectLesson={(id) => setActiveLessonId(id)} 
+            />
+            <LessonViewer lesson={currentLesson} />
+          </main>
+        )}
 
-      {activeTab === 'simulator' && (
-        <main style={{ marginTop: '1.5rem' }}>
-          <GitSimulator />
-        </main>
-      )}
+        {activeTab === 'simulator' && (
+          <main>
+            <GitSimulator />
+          </main>
+        )}
 
-      {activeTab === 'scenarios' && (
-        <main style={{ marginTop: '1.5rem' }}>
-          <ScenarioSimulator />
-        </main>
-      )}
+        {activeTab === 'scenarios' && (
+          <main>
+            <ScenarioSimulator />
+          </main>
+        )}
 
-      {activeTab === 'cheatsheet' && (
-        <main style={{ marginTop: '1.5rem' }}>
-          <CheatSheet />
-        </main>
-      )}
+        {activeTab === 'cheatsheet' && (
+          <main>
+            <CheatSheet />
+          </main>
+        )}
 
-      {activeTab === 'config' && (
-        <main style={{ marginTop: '1.5rem' }}>
-          <GitConfigBuilder />
-        </main>
-      )}
+        {activeTab === 'config' && (
+          <main>
+            <GitConfigBuilder />
+          </main>
+        )}
+      </div>
     </div>
   );
 }
