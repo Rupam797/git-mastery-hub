@@ -9,7 +9,7 @@ import GitConfigBuilder from './components/GitConfigBuilder';
 import { gitModules } from './data/gitLessons';
 
 export default function App() {
-  const [activeTab, setActiveTab] = useState('lessons');
+  const [activeTab, setActiveTab] = useState('simulator');
   const [activeLessonId, setActiveLessonId] = useState('git-architecture');
   
   // Theme state: default to 'dark' or stored preference
