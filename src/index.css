@@ -1,31 +1,31 @@
 @import url('https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@300;400;500;600;700&family=JetBrains+Mono:wght@400;500;600;700&display=swap');
 
-/* ═══ 1. FULL DARK THEME ═══ */
+/* ═══ 1. TRUE PITCH-BLACK DARK THEME ═══ */
 :root, [data-theme="dark"] {
-  --bg-dark: #070913;
-  --bg-card: rgba(15, 22, 38, 0.8);
-  --bg-card-solid: #0d1527;
-  --bg-card-hover: rgba(22, 32, 54, 0.95);
-  --border-color: rgba(255, 255, 255, 0.08);
-  --border-accent: rgba(0, 242, 254, 0.35);
+  --bg-dark: #000000;
+  --bg-card: rgba(18, 18, 22, 0.85);
+  --bg-card-solid: #0e0e12;
+  --bg-card-hover: rgba(28, 28, 36, 0.95);
+  --border-color: rgba(255, 255, 255, 0.12);
+  --border-accent: rgba(0, 242, 254, 0.4);
   
   --primary-cyan: #00f2fe;
-  --primary-blue: #4facfe;
-  --accent-purple: #7928ca;
-  --accent-pink: #ff0080;
+  --primary-blue: #3b82f6;
+  --accent-purple: #a855f7;
+  --accent-pink: #ec4899;
   --accent-emerald: #00dfa2;
-  --accent-amber: #ffb703;
-  --accent-rose: #ff4b4b;
+  --accent-amber: #f59e0b;
+  --accent-rose: #ef4444;
   
-  --text-main: #cbd5e1;
+  --text-main: #d1d5db;
   --text-heading: #ffffff;
-  --text-muted: #94a3b8;
-  --text-dim: #64748b;
+  --text-muted: #9ca3af;
+  --text-dim: #6b7280;
 
   --bg-body-gradient: 
-    radial-gradient(at 0% 0%, rgba(121, 40, 202, 0.15) 0px, transparent 50%),
-    radial-gradient(at 100% 0%, rgba(0, 242, 254, 0.15) 0px, transparent 50%),
-    radial-gradient(at 50% 100%, rgba(0, 223, 162, 0.1) 0px, transparent 50%);
+    radial-gradient(at 0% 0%, rgba(168, 85, 247, 0.12) 0px, transparent 50%),
+    radial-gradient(at 100% 0%, rgba(0, 242, 254, 0.12) 0px, transparent 50%),
+    radial-gradient(at 50% 100%, rgba(0, 223, 162, 0.08) 0px, transparent 50%);
   
   --font-sans: 'Space Grotesk', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
   --font-mono: 'JetBrains Mono', monospace;
@@ -35,18 +35,18 @@
   --radius-lg: 18px;
   --radius-xl: 24px;
 
-  --shadow-glow: 0 0 25px rgba(0, 242, 254, 0.15);
-  --shadow-card: 0 10px 30px -10px rgba(0, 0, 0, 0.5);
+  --shadow-glow: 0 0 25px rgba(0, 242, 254, 0.18);
+  --shadow-card: 0 10px 30px -10px rgba(0, 0, 0, 0.8);
 
-  --code-bg: #030712;
+  --code-bg: #050507;
   --code-text: #a5f3fc;
-  --terminal-bg: #020408;
-  --terminal-header: #0c1525;
-  --visualiser-bg: #060b16;
-  --visualiser-header: #0c1525;
-  --input-bg: #040914;
-  --nav-bg: rgba(0, 0, 0, 0.35);
-  --badge-bg-subtle: rgba(255, 255, 255, 0.04);
+  --terminal-bg: #000000;
+  --terminal-header: #0e0e12;
+  --visualiser-bg: #070709;
+  --visualiser-header: #0e0e12;
+  --input-bg: #08080a;
+  --nav-bg: rgba(20, 20, 25, 0.6);
+  --badge-bg-subtle: rgba(255, 255, 255, 0.05);
 }
 
 /* ═══ 2. FULL OFF-WHITE THEME ═══ */
