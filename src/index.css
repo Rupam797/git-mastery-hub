@@ -1,11 +1,11 @@
 @import url('https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@300;400;500;600;700&family=JetBrains+Mono:wght@400;500;600;700&display=swap');
 
-/* ═══ 1. TRUE PITCH-BLACK DARK THEME ═══ */
+/* ═══ 1. PURE SOLID BLACK DARK THEME (NO GLOWS / NO GRADIENTS) ═══ */
 :root, [data-theme="dark"] {
   --bg-dark: #000000;
-  --bg-card: rgba(18, 18, 22, 0.85);
+  --bg-card: #0a0a0c;
   --bg-card-solid: #0e0e12;
-  --bg-card-hover: rgba(28, 28, 36, 0.95);
+  --bg-card-hover: #141418;
   --border-color: rgba(255, 255, 255, 0.12);
   --border-accent: rgba(0, 242, 254, 0.4);
   
@@ -22,10 +22,7 @@
   --text-muted: #9ca3af;
   --text-dim: #6b7280;
 
-  --bg-body-gradient: 
-    radial-gradient(at 0% 0%, rgba(168, 85, 247, 0.12) 0px, transparent 50%),
-    radial-gradient(at 100% 0%, rgba(0, 242, 254, 0.12) 0px, transparent 50%),
-    radial-gradient(at 50% 100%, rgba(0, 223, 162, 0.08) 0px, transparent 50%);
+  --bg-body-gradient: none;
   
   --font-sans: 'Space Grotesk', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
   --font-mono: 'JetBrains Mono', monospace;
@@ -35,8 +32,8 @@
   --radius-lg: 18px;
   --radius-xl: 24px;
 
-  --shadow-glow: 0 0 25px rgba(0, 242, 254, 0.18);
-  --shadow-card: 0 10px 30px -10px rgba(0, 0, 0, 0.8);
+  --shadow-glow: none;
+  --shadow-card: none;
 
   --code-bg: #050507;
   --code-text: #a5f3fc;
@@ -45,14 +42,14 @@
   --visualiser-bg: #070709;
   --visualiser-header: #0e0e12;
   --input-bg: #08080a;
-  --nav-bg: rgba(20, 20, 25, 0.6);
+  --nav-bg: #111116;
   --badge-bg-subtle: rgba(255, 255, 255, 0.05);
 }
 
 /* ═══ 2. FULL OFF-WHITE THEME ═══ */
 [data-theme="light"] {
   --bg-dark: #fbf9f5;
-  --bg-card: rgba(255, 255, 255, 0.95);
+  --bg-card: #ffffff;
   --bg-card-solid: #ffffff;
   --bg-card-hover: #f5f2eb;
   --border-color: rgba(217, 210, 199, 0.85);
@@ -71,13 +68,10 @@
   --text-muted: #64748b;
   --text-dim: #94a3b8;
 
-  --bg-body-gradient: 
-    radial-gradient(at 0% 0%, rgba(245, 242, 235, 0.9) 0px, transparent 50%),
-    radial-gradient(at 100% 0%, rgba(238, 233, 222, 0.7) 0px, transparent 50%),
-    radial-gradient(at 50% 100%, rgba(243, 238, 228, 0.8) 0px, transparent 50%);
+  --bg-body-gradient: none;
 
-  --shadow-glow: 0 0 25px rgba(2, 132, 199, 0.12);
-  --shadow-card: 0 10px 30px -10px rgba(15, 23, 42, 0.06);
+  --shadow-glow: none;
+  --shadow-card: 0 4px 20px rgba(0, 0, 0, 0.04);
 
   --code-bg: #1e293b;
   --code-text: #38bdf8;
@@ -106,8 +100,7 @@ code, pre, .terminal-body, .terminal-input, .command-code, .commit-hash-pill, .b
 
 body {
   background-color: var(--bg-dark);
-  background-image: var(--bg-body-gradient);
-  background-attachment: fixed;
+  background-image: none !important;
   color: var(--text-main);
   min-height: 100vh;
   -webkit-font-smoothing: antialiased;
@@ -174,7 +167,6 @@ body {
 /* Header & Navigation Bar */
 .app-header {
   background: var(--bg-card);
-  backdrop-filter: blur(16px);
   border: 1px solid var(--border-color);
   border-radius: var(--radius-lg);
   padding: 0.85rem 1.15rem;
@@ -207,7 +199,7 @@ body {
   align-items: center;
   justify-content: center;
   color: white;
-  box-shadow: 0 0 15px rgba(0, 242, 254, 0.25);
+  box-shadow: none !important;
   flex-shrink: 0;
 }
 
@@ -267,7 +259,7 @@ body {
   background: var(--bg-card-solid);
   color: var(--primary-cyan);
   border: 1px solid var(--border-accent);
-  box-shadow: var(--shadow-glow);
+  box-shadow: none !important;
 }
 
 /* Theme Toggle Button */
@@ -291,13 +283,12 @@ body {
 .theme-toggle-btn:hover {
   border-color: var(--primary-cyan);
   transform: translateY(-1px);
-  box-shadow: var(--shadow-glow);
+  box-shadow: none !important;
 }
 
 /* Sidebar Navigation */
 .sidebar {
   background: var(--bg-card);
-  backdrop-filter: blur(16px);
   border: 1px solid var(--border-color);
   border-radius: var(--radius-lg);
   padding: 1rem;
@@ -401,7 +392,6 @@ body {
 /* Lesson Content Area */
 .content-card {
   background: var(--bg-card);
-  backdrop-filter: blur(16px);
   border: 1px solid var(--border-color);
   border-radius: var(--radius-lg);
   padding: 1.75rem;
@@ -575,7 +565,6 @@ body {
   right: 0;
   bottom: 0;
   background: rgba(0, 0, 0, 0.6);
-  backdrop-filter: blur(8px);
   z-index: 1000;
   display: flex;
   align-items: center;
@@ -618,7 +607,7 @@ body {
 .scenario-card:hover {
   transform: translateY(-3px);
   border-color: var(--border-accent);
-  box-shadow: var(--shadow-glow);
+  box-shadow: none !important;
 }
 
 /* Cheat Sheet Grid */
