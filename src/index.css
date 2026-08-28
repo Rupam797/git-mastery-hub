@@ -1,12 +1,13 @@
 @import url('https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@300;400;500;600;700&family=JetBrains+Mono:wght@400;500;600;700&display=swap');
 
+/* ═══ 1. FULL DARK THEME ═══ */
 :root, [data-theme="dark"] {
   --bg-dark: #070913;
-  --bg-card: rgba(15, 22, 38, 0.75);
+  --bg-card: rgba(15, 22, 38, 0.8);
   --bg-card-solid: #0d1527;
-  --bg-card-hover: rgba(22, 32, 54, 0.85);
+  --bg-card-hover: rgba(22, 32, 54, 0.95);
   --border-color: rgba(255, 255, 255, 0.08);
-  --border-accent: rgba(0, 242, 254, 0.3);
+  --border-accent: rgba(0, 242, 254, 0.35);
   
   --primary-cyan: #00f2fe;
   --primary-blue: #4facfe;
@@ -22,9 +23,9 @@
   --text-dim: #64748b;
 
   --bg-body-gradient: 
-    radial-gradient(at 0% 0%, rgba(121, 40, 202, 0.12) 0px, transparent 50%),
-    radial-gradient(at 100% 0%, rgba(0, 242, 254, 0.12) 0px, transparent 50%),
-    radial-gradient(at 50% 100%, rgba(0, 223, 162, 0.08) 0px, transparent 50%);
+    radial-gradient(at 0% 0%, rgba(121, 40, 202, 0.15) 0px, transparent 50%),
+    radial-gradient(at 100% 0%, rgba(0, 242, 254, 0.15) 0px, transparent 50%),
+    radial-gradient(at 50% 100%, rgba(0, 223, 162, 0.1) 0px, transparent 50%);
   
   --font-sans: 'Space Grotesk', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
   --font-mono: 'JetBrains Mono', monospace;
@@ -44,17 +45,18 @@
   --visualiser-bg: #060b16;
   --visualiser-header: #0c1525;
   --input-bg: #040914;
-  --nav-bg: rgba(0, 0, 0, 0.3);
+  --nav-bg: rgba(0, 0, 0, 0.35);
   --badge-bg-subtle: rgba(255, 255, 255, 0.04);
 }
 
+/* ═══ 2. FULL OFF-WHITE THEME ═══ */
 [data-theme="light"] {
-  --bg-dark: #f8fafc;
-  --bg-card: rgba(255, 255, 255, 0.9);
+  --bg-dark: #fbf9f5;
+  --bg-card: rgba(255, 255, 255, 0.95);
   --bg-card-solid: #ffffff;
-  --bg-card-hover: rgba(241, 245, 249, 0.95);
-  --border-color: rgba(203, 213, 225, 0.8);
-  --border-accent: rgba(2, 132, 199, 0.4);
+  --bg-card-hover: #f5f2eb;
+  --border-color: rgba(217, 210, 199, 0.85);
+  --border-accent: rgba(2, 132, 199, 0.45);
   
   --primary-cyan: #0284c7;
   --primary-blue: #2563eb;
@@ -70,21 +72,21 @@
   --text-dim: #94a3b8;
 
   --bg-body-gradient: 
-    radial-gradient(at 0% 0%, rgba(124, 58, 237, 0.06) 0px, transparent 50%),
-    radial-gradient(at 100% 0%, rgba(2, 132, 199, 0.06) 0px, transparent 50%),
-    radial-gradient(at 50% 100%, rgba(5, 150, 105, 0.05) 0px, transparent 50%);
+    radial-gradient(at 0% 0%, rgba(245, 242, 235, 0.9) 0px, transparent 50%),
+    radial-gradient(at 100% 0%, rgba(238, 233, 222, 0.7) 0px, transparent 50%),
+    radial-gradient(at 50% 100%, rgba(243, 238, 228, 0.8) 0px, transparent 50%);
 
-  --shadow-glow: 0 0 25px rgba(2, 132, 199, 0.15);
-  --shadow-card: 0 10px 30px -10px rgba(15, 23, 42, 0.08);
+  --shadow-glow: 0 0 25px rgba(2, 132, 199, 0.12);
+  --shadow-card: 0 10px 30px -10px rgba(15, 23, 42, 0.06);
 
-  --code-bg: #0f172a;
+  --code-bg: #1e293b;
   --code-text: #38bdf8;
   --terminal-bg: #090d16;
   --terminal-header: #1e293b;
-  --visualiser-bg: #ffffff;
-  --visualiser-header: #f1f5f9;
+  --visualiser-bg: #f5f2eb;
+  --visualiser-header: #e8e4db;
   --input-bg: #ffffff;
-  --nav-bg: rgba(226, 232, 240, 0.7);
+  --nav-bg: #ede9e1;
   --badge-bg-subtle: rgba(15, 23, 42, 0.04);
 }
 
@@ -110,7 +112,7 @@ body {
   min-height: 100vh;
   -webkit-font-smoothing: antialiased;
   line-height: 1.6;
-  transition: background-color 0.3s ease, color 0.3s ease;
+  transition: background-color 0.35s ease, color 0.35s ease;
 }
 
 /* Custom Scrollbar */
@@ -180,7 +182,7 @@ body {
   flex-direction: column;
   gap: 0.75rem;
   box-shadow: var(--shadow-card);
-  transition: all 0.3s ease;
+  transition: all 0.35s ease;
 }
 
 .header-top {
@@ -284,12 +286,6 @@ body {
   white-space: nowrap;
   flex-shrink: 0;
   transition: all 0.25s ease;
-}
-
-.theme-toggle-btn:hover {
-  border-color: var(--primary-cyan);
-  transform: translateY(-1px);
-  box-shadow: var(--shadow-glow);
 }
 
 .theme-toggle-btn:hover {
@@ -571,7 +567,7 @@ body {
   color: var(--text-main);
 }
 
-/* 4. Popup Modals */
+/* Popup Modals */
 .modal-overlay {
   position: fixed;
   top: 0;
