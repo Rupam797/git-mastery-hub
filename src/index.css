@@ -682,3 +682,209 @@ body {
   color: var(--text-main);
   cursor: pointer;
 }
+
+/* ═══════════════════════════════════════════════════════════
+   FULL REAL TERMINAL ENHANCEMENTS & THEMES
+   ═══════════════════════════════════════════════════════════ */
+
+@keyframes term-cursor-blink {
+  0%, 49% { opacity: 1; }
+  50%, 100% { opacity: 0; }
+}
+
+.term-cursor {
+  display: inline-block;
+  width: 8px;
+  height: 1.1em;
+  background-color: currentColor;
+  vertical-align: text-bottom;
+  margin-left: 2px;
+  animation: term-cursor-blink 1s infinite;
+}
+
+/* CRT Scanline Effect */
+.term-scanlines {
+  position: relative;
+}
+
+.term-scanlines::before {
+  content: " ";
+  display: block;
+  position: absolute;
+  top: 0; left: 0; bottom: 0; right: 0;
+  background: linear-gradient(rgba(18, 16, 16, 0) 50%, rgba(0, 0, 0, 0.25) 50%), linear-gradient(90deg, rgba(255, 0, 0, 0.03), rgba(0, 255, 0, 0.01), rgba(0, 0, 255, 0.03));
+  z-index: 10;
+  background-size: 100% 3px, 3px 100%;
+  pointer-events: none;
+  opacity: 0.7;
+}
+
+/* Terminal Theme: Dark Modern (default) */
+.term-theme-dark {
+  --term-bg: #030712;
+  --term-header-bg: #0b1329;
+  --term-text: #e2e8f0;
+  --term-prompt-user: #00dfa2;
+  --term-prompt-path: #38bdf8;
+  --term-prompt-branch: #f59e0b;
+  --term-cmd: #00f2fe;
+  --term-error: #f87171;
+  --term-sys: #34d399;
+  --term-border: rgba(255, 255, 255, 0.12);
+}
+
+/* Terminal Theme: Matrix Green */
+.term-theme-matrix {
+  --term-bg: #020b05;
+  --term-header-bg: #041f0d;
+  --term-text: #00ff66;
+  --term-prompt-user: #00ff66;
+  --term-prompt-path: #34d399;
+  --term-prompt-branch: #a7f3d0;
+  --term-cmd: #ffffff;
+  --term-error: #ff4b4b;
+  --term-sys: #6ee7b7;
+  --term-border: rgba(0, 255, 102, 0.25);
+  font-weight: 500;
+}
+
+/* Terminal Theme: CRT Phosphor Retro */
+.term-theme-retro {
+  --term-bg: #050f07;
+  --term-header-bg: #09200f;
+  --term-text: #33ff33;
+  --term-prompt-user: #33ff33;
+  --term-prompt-path: #88ff88;
+  --term-prompt-branch: #ffff44;
+  --term-cmd: #ffffff;
+  --term-error: #ff3333;
+  --term-sys: #66ff66;
+  --term-border: rgba(51, 255, 51, 0.3);
+  text-shadow: 0 0 4px rgba(51, 255, 51, 0.5);
+}
+
+/* Terminal Theme: Dracula Cyberpunk */
+.term-theme-dracula {
+  --term-bg: #181825;
+  --term-header-bg: #212234;
+  --term-text: #f8f8f2;
+  --term-prompt-user: #50fa7b;
+  --term-prompt-path: #8be9fd;
+  --term-prompt-branch: #ff79c6;
+  --term-cmd: #bd93f9;
+  --term-error: #ff5555;
+  --term-sys: #f1fa8c;
+  --term-border: rgba(189, 147, 249, 0.25);
+}
+
+/* Terminal Theme: Ubuntu Violet */
+.term-theme-ubuntu {
+  --term-bg: #2c001e;
+  --term-header-bg: #300a24;
+  --term-text: #ffffff;
+  --term-prompt-user: #875f97;
+  --term-prompt-path: #ffffff;
+  --term-prompt-branch: #ffb200;
+  --term-cmd: #4e9a06;
+  --term-error: #ef2929;
+  --term-sys: #729fcf;
+  --term-border: rgba(255, 178, 0, 0.25);
+}
+
+/* Terminal Theme: macOS Light */
+.term-theme-macos {
+  --term-bg: #f8fafc;
+  --term-header-bg: #e2e8f0;
+  --term-text: #0f172a;
+  --term-prompt-user: #0284c7;
+  --term-prompt-path: #0f172a;
+  --term-prompt-branch: #d97706;
+  --term-cmd: #2563eb;
+  --term-error: #dc2626;
+  --term-sys: #059669;
+  --term-border: rgba(0, 0, 0, 0.15);
+}
+
+/* Terminal Quick Pill Buttons */
+.term-chip-btn {
+  background: rgba(255, 255, 255, 0.05);
+  border: 1px solid rgba(255, 255, 255, 0.12);
+  color: var(--text-main);
+  padding: 3px 10px;
+  border-radius: 6px;
+  font-family: var(--font-mono);
+  font-size: 0.75rem;
+  cursor: pointer;
+  white-space: nowrap;
+  transition: all 0.15s ease;
+}
+
+.term-chip-btn:hover {
+  background: rgba(0, 242, 254, 0.15);
+  border-color: rgba(0, 242, 254, 0.4);
+  color: #00f2fe;
+  transform: translateY(-1px);
+}
+
+/* Windows Terminal Window Frame Styling */
+.win-control-btn {
+  width: 32px;
+  height: 28px;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  color: #94a3b8;
+  font-size: 11px;
+  font-family: Segoe UI, sans-serif;
+  cursor: pointer;
+  transition: all 0.15s ease;
+}
+
+.win-control-btn:hover {
+  background: rgba(255, 255, 255, 0.1);
+  color: #ffffff;
+}
+
+.win-control-btn.win-close:hover {
+  background: #e81123;
+  color: #ffffff;
+}
+
+.win-tab {
+  background: rgba(255, 255, 255, 0.08);
+  border-top-left-radius: 6px;
+  border-top-right-radius: 6px;
+  padding: 4px 12px;
+  font-size: 0.75rem;
+  font-family: var(--font-mono);
+  color: #e2e8f0;
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  border-bottom: 2px solid #38bdf8;
+}
+
+/* Inline Nano Editor Modal */
+.nano-modal-backdrop {
+  position: fixed;
+  top: 0; left: 0; right: 0; bottom: 0;
+  background: rgba(0, 0, 0, 0.85);
+  z-index: 9999;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 1rem;
+}
+
+.nano-editor-card {
+  width: 100%;
+  max-width: 720px;
+  background: #090d16;
+  border: 1px solid rgba(0, 242, 254, 0.3);
+  border-radius: 12px;
+  overflow: hidden;
+  box-shadow: 0 25px 60px rgba(0, 0, 0, 0.9);
+  display: flex;
+  flex-direction: column;
+}
+
